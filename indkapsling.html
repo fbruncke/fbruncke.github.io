@@ -1,0 +1,455 @@
+
+<html>
+  <head>
+      <title>Java - Introduktion</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+    
+  <body bgColor="white">
+    <div data-title-header="">
+      {
+        "title": "Introduktion"
+      }
+    </div>
+    
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+    <table align="center" border="0" cellPadding="10" cellSpacing="0" width="90%">
+      <tr> 
+          <td> 
+          <td> Hvad er objektorienteret programmering? Det er programmering med objekter! 
+      <tr> 
+          <td> 
+          <td> I virkeligheden er det ikke mere kompliceret end det! Men historien 
+            er naturligvis meget l&aelig;ngere. For hvad er objekter? Og hvad vil det 
+            sige at man programmerer med dem?
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><b><font face ="" size="6">1. Objekter</font></b></p>
+      <tr> 
+          <td> 
+          <td> En tegning siger mere end tusind ord, s&aring; lad os derfor se et objekt: 
+      <tr> 
+          <td><font face ="" size="4"><u>Figur 1:</u><b><br>
+            </b><i>Et objekt</i></font> 
+          <td> 
+            <table align="center" border="0" cellPadding="5" cellSpacing="0">
+              <tr> 
+                <td><img src="oop_objekt.gif" width="287" height="289"></td>
+              </tr>
+            </table>
+      <tr> 
+          <td> 
+          <td> Et objekt best&aring;r af to ting: 
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><font face ="" size="5">1.1 Data</font> </p>
+      <tr> 
+          <td><b><font face ="" size="4">Datakernen</font></b> 
+          <td> 
+            <p><b>Datakernen</b> ligger beskyttet inde midt i objektet. Udefra er 
+              der ikke mulighed for hverken at afl&aelig;se eller &aelig;ndre data 
+              i objektet. Det er meget centrale i objekt-begrebet at der er denne 
+              beskyttelse. Den opleves dog ofte som en sp&aelig;ndetr&oslash;je blandt 
+              begyndere i objektorienteret programmering. De mener at det ville v&aelig;re 
+              s&aring; meget nemmere hvis alle data var frit tilg&aelig;ngelige. Det 
+              har de delvis ret i. Det vil v&aelig;re nemmere at lave &quot;ad hoc&quot;-programmering 
+              uden n&aelig;vnev&aelig;rdige design-overvejelser, og man kan hurtigt 
+              f&aring; noget fra h&aring;nden. Problemet er at det g&aring;r ud over 
+              n&aelig;sten alt andet. Det er vanskeligere at finde fejl, for hvem 
+              var det nu lige der &aelig;ndrede datakernen s&aring; den fik et forkert 
+              indhold? Hvad hvis man &oslash;nsker at lave &aelig;ndringer der involverer 
+              bestemte data? S&aring; skal man principielt til at lede hele kildeteksten 
+              igennem for at se hvordan disse data anvendes alle steder, s&aring; man ikke 
+              introducerer  fejl, ved at der opst&aring;r mods&aelig;tninger mellem 
+              de forskellige anvendelser. Ved at tillade fri adgang til datakernen mister man grebet 
+              - resultatet bliver uoverskueligt, og i l&aelig;ngden h&aring;bl&oslash;st 
+              at arbejde med. Det er netop dette der ligger til grund for begynderens oplevelse. Han skal ikke lave store programmer eller senere 
+              viderudvikle de programmer han laver.</p>
+      <tr> 
+          <td><b><font face ="" size="4">Indkapsling</font></b> 
+          <td> Dette, at datakernen ligger beskyttet inde i objektet, kaldes <b>indkapsling</b> 
+            og er et af de fundamentale begreber i objektorienteret programmering. 
+      <tr> 
+          <td><b><font face ="" size="4">Sl&aring; skruer i med en skruetr&aelig;kker</font></b> 
+          <td> En anden grund til at man kan f&oslash;le indkapsling som et irritationsmoment, er manglende indsigt i objektorientering. 
+            Hvis man tidligere har programmeret i procedurelle programmeringssprog 
+            (f.eks. Pascal eller C) vil man som udgangspunkt fors&oslash;ge 
+            at &quot;g&oslash;re det samme&quot; som man altid har gjort, n&aring;r 
+            man i stedet skal anvende et objektorienteret sprog (F.eks. Java, C++ 
+            eller C#). Det er simpelthen et sp&oslash;rgsm&aring;l om at man 
+            pr&oslash;ver at mase en form for programmering ned i en kasse, der er 
+            beregnet til en anden form for programmering. Hvis man har v&aelig;ret 
+            vant til at bruge hammer og s&oslash;m, men nu i stedet skal bruge en skruetr&aelig;kker 
+            og skruer, er det klart at man efter at have sl&aring;et p&aring; skruen 
+            med skaftet af skruetr&aelig;kkeren, ikke synes at den nye teknologi er 
+            et fremskridt. 
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><font face ="" size="5">1.2 Operationer</font></p>
+      <tr> 
+          <td> 
+          <td>Operationerne ligger beskyttende uden om datakernen. De beskytter og 
+            styrer den indirekte adgang til data. Som n&aelig;vnt har ingen udenfor 
+            direkte adgang objektets data, men operationerne deles om datakernen og ved at anvende 
+            dem kan man udefra <i>indirekte</i> p&aring;virke datakernen. 
+      <tr> 
+          <td><b><font face ="" size="4">Skruer er d&aring;rlige s&oslash;m</font></b> 
+          <td> N&aring;r begyndere designer objekter, ser man ofte at de laver operationerne 
+            s&aring; de reelt giver direkte adgang til datakernen. De laver f.eks. 
+            operationer til at afl&aelig;se data og tilsvarende operationer til at 
+            &aelig;ndre data. Dermed bruger de operationerne til 
+            at bryde indkapslingen og p&aring; den m&aring;de f&aring; skruerne banket 
+            ind i v&aelig;ggen, som de s&oslash;m de burde v&aelig;re. 
+      <tr bgcolor="#CCCCCC"> 
+          <td>
+          <td> 
+            <p>&nbsp;</p>
+            <p><font size="5">1.3 &quot;&AElig;ble med kerne&quot;-modellen</font></p>
+          
+      <tr bgcolor="#CCCCCC"> 
+          <td>
+          <td><i>[Model af objekt - konkret billede - kan beskrives p&aring; andre 
+            m&aring;der - Jacobson's Object Advantage]</i>
+        
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><b><font face ="" size="6">2. Objekt-systemer</font></b></p>
+      <tr> 
+          <td><b><font face ="" size="4">&Eacute;n svale g&oslash;r ingen sommer</font></b> 
+          <td> Et program med &eacute;t objekt er ikke meget bevendt. &Eacute;n svale 
+            g&oslash;r ingen sommer! Id&eacute;en i objektorienteret programmering 
+            er at have flere objekter der fungerer sammen i et <b>objektsystem</b>. 
+            Dette samarbejde er den mest centrale tanke bag moderne objektorienteret 
+            programmering. I de senere &aring;r har &quot;Design Pattern b&oslash;lgen&quot; 
+            skyllet gennem den objektorienterede verden, og den har bidraget til at 
+            formidle erfaring med at opbygge objektsystemer og realiserer deres samarbejdsm&oslash;nstre. 
+            B&oslash;lgen har ogs&aring; bredt sig til andre emner, og i dag findes 
+            der patterns inden for mangt et omr&aring;de, ogs&aring; dem der intet 
+            har med programmering og systemudvikling at g&oslash;re. 
+        
+      <tr> 
+          <td><b><font face ="" size="4">Associering</font></b> 
+          <td> M&aring;den objekter samarbejder p&aring;, kr&aelig;ver at de 
+            kender hinanden. Dette kendskab kaldes associering. Man er associeret 
+            et objekt, hvis man er kendt af det p&aring;g&aelig;ldende objekt. Objekter 
+            realiserer associering ved at have referencer til hinanden; hvor igennem 
+            de kan kommunikere. Vi vil illustrere dette med pile, der viser hvem der 
+            kender hvem. 
+      <tr> 
+          <td><u><font face ="" 
+                    size="4">Figur 2:</font></u><br>
+            <i><font face ="" size="4" 
+                   >Objektsystem</font></i> 
+          <td> 
+            <table align="center" border="0" cellPadding="5" cellSpacing="0">
+              <tr> 
+                <td><img src="oop_system.gif" width="486" height="441"></td>
+              </tr>
+            </table>
+      <tr> 
+          <td> 
+          <td> Objekter kommunikerer ved, at et objekt sender en besked til et andet. 
+            Det modtagende objekt returnerer efterf&oslash;lgende et svar. En besked 
+            afsendt fra et objekt kaldes en <b>request</b>. N&aring;r et objekt modtager 
+            en request reagerer den ved at g&oslash;re &quot;et eller andet&quot; 
+            og dern&aelig;st returnere &quot;et eller andet&quot;: 
+        
+      <tr> 
+          <td><u><font face ="" 
+                    size="4">Figur 3:</font></u><br>
+            <i><font face ="" size="4" 
+                   >En request</font></i> 
+          <td> 
+            <table align="center" border="0" cellPadding="5" cellSpacing="0">
+              <tr> 
+                <td><img src="oop_request.gif" width="453" height="286"></td>
+              </tr>
+            </table>
+      <tr> 
+          <td><b><font face ="" size="4">Indirekte l&aelig;se eller &aelig;ndre</font></b> 
+          <td> Det &quot;et eller andet&quot; objektet g&oslash;r, kan f.eks. bevirke 
+            at der sker &aelig;ndringer i dets datakerne. P&aring; den m&aring;de har 
+            det objekt som sendte requesten indirekte f&aring;et adgang til at <i>&aelig;ndre</i> 
+            datakernen. Det der returneres kan v&aelig;re et resultat, der baserer 
+            sig p&aring; hvilke data der var i kernen, og p&aring; den m&aring;de f&aring;r 
+            det objekt der sendte requesten, indirekte adgang til at <i>l&aelig;se</i> 
+            i datakernen. Det er v&aelig;sentligt at bem&aelig;rke, at det er objektet 
+            selv der har kontrol med: hvad der skal &aelig;ndres, og hvad det vil returnere 
+            af oplysninger. 
+        
+      <tr> 
+          <td> 
+          <td>&Eacute;n request g&aring;r ud p&aring; at udf&oslash;re &eacute;n af objektets 
+            operationer. Udf&oslash;relsen af en operation begr&aelig;nser sig ikke 
+            kun til at arbejde med objektets datakerne. Det kan indbefatte at operationen 
+            selv sender requests til andre objekter, og p&aring; den m&aring;de samarbejder 
+            med andre om at besvare den request der blev modtaget. Det at sende en opgave 
+            helt eller delvist videre kaldes delegering. Delegering er det v&aelig;sentligste 
+            samarbejdsm&oslash;nster mellem objekter: 
+        
+      <tr> 
+          <td><u><font face ="" 
+                    size="4">Figur 4:</font></u><br>
+            <i><font face ="" size="4" 
+                   >Delegering</font></i> 
+          <td> 
+            <table align="center" border="0" cellPadding="5" cellSpacing="0">
+              <tr> 
+                <td><img src="oop_delegation.gif" width="429" height="115"></td>
+              </tr>
+            </table>
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><b><font face ="" size="6">3. Skabeloner</font></b></p>
+      <tr> 
+          <td> 
+          <td> Hvad g&oslash;r man n&aring;r man vil lave et objekt? 
+      <tr> 
+          <td><b><font size="4">Instantiering </font></b>
+          <td> Man skal naturligvis <i>beskrive</i> objektet: Hvilke data og hvilke 
+            operatorer det skal have. En s&aring;dan beskrivelse vil vi i f&oslash;rste 
+            omgang kalde en skabelon. N&aring;r man f&oslash;rst har lavet en skabelon, 
+            kan man lave objekter ved at henvise til skabelon, idet man siger: &quot;Jeg 
+            vil have s&aring;dan &eacute;n&quot;. 
+        
+      <tr> 
+          <td> 
+          <td> En af fordelene ved en skabelon er at man kan lave vilk&aring;rlig 
+            mange objekter ved at henvise til den. N&aring;r man laver objektsystemer 
+            vil man ofte bruge flere objekter af samme slags. Hvad skal man med ens 
+            objekter? 
+        
+      <tr> 
+          <td><b><font size="4">Uafh&aelig;ngige af hinanden</font></b>
+          <td> Objekterne vil ikke v&aelig;re helt ens. Nok starter de med at v&aelig;re 
+            ens, men det bliver sj&aelig;ldent ved ret l&aelig;nge. Ved forskellige 
+            requests vil datakernerne i de forskellige objekter l&oslash;bende &aelig;ndre 
+            sig og de vil leve hver deres liv. Det der vedbliver med at v&aelig;re 
+            ens er operationerne, der kan udf&oslash;res ved requests, samt hvilke 
+            <i>slags</i> data der er i deres respektive datakerner. 
+        
+      <tr> 
+          <td><u><font face ="" 
+                    size="4">Figur 5:</font></u><br>
+            <i><font face ="" size="4" 
+                   >Instantiering</font></i> 
+          <td> 
+            <table align="center" border="0" cellPadding="5" cellSpacing="0">
+              <tr> 
+                <td><img src="oop_klasser.gif" width="525" height="256"></td>
+              </tr>
+            </table>
+      <tr> 
+          <td> 
+          <td> Her har vi to skabeloner: Gr&oslash;n og Bl&aring;, og vi laver tre 
+            objekter ud fra hver af de to skabeloner. De seks objekter bruger vi til 
+            at lave et objektsystem. 
+      <tr> 
+          <td><b><font face ="" size="4">Klasser og instanser</font></b> 
+          <td> Skabeloner kalder man normalt <b>klasser</b>. Det at lave et objekt 
+            ud fra en klasse kalder man at <b>instantiere</b>. Af samme grund kalder 
+            man ofte objekter, der er lavet ved instantiering for <b>instanser</b>. 
+            Man siger ligeledes at et objekt er en <b>instans af</b> en klasse, hvis 
+            det er lavet ved at instantiere ud fra klassen. 
+        
+      <tr> 
+          <td> 
+          <td> I vores eksempel laves der alts&aring; tre instanser af hver af de 
+            to klasser: Gr&oslash;n og Bl&aring;. De seks instanser bruges til at 
+            opbygge et objektsystem. 
+        
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><b><font face ="" size="6">4. Nedarvning</font></b></p>
+      <tr> 
+          <td> 
+          <td> Vi kan nu lave lige s&aring; mange objekter af en bestemt slags som 
+            vi m&aring;tte &oslash;nske. Det eneste der kr&aelig;ves er at vi har 
+            en klasse der beskriver, hvordan de skal v&aelig;re opbygget. Hvis vi 
+            vil have en anden slags objekter skal vi blot lave en ny klasse. 
+        
+      <tr> 
+          <td><i><b><font face ="" size="4">Lidt</font></b></i><b><font face ="" size="4"> 
+            anderledes</font></b> 
+          <td>Det med at lave en ny klasse kan v&aelig;re upraktisk, hvis det kun 
+            er en <i>lidt</i> anderledes objekter vi &oslash;nsker. I en s&aring;dan 
+            situation kunne man &oslash;nske at tage udgangspunkt i den klasse man 
+            allerede har, og blot angive de ting der skal v&aelig;re anderledes.
+      <tr> 
+          <td> 
+          <td> Det kan man ved hj&aelig;lp af nedarvning, hvor en klasse laves med 
+            udgangspunkt i en anden. Man siger, at man nedarver fra en klasse til 
+            en anden. Den klasse man arver fra, er den man allerede har, mens den 
+            man arver til, er den lidt anderledes klasse man gerne vil lave. 
+      <tr> 
+          <td><u><font face ="" 
+                    size="4">Figur 6:</font></u><br>
+            <i><font face ="" size="4" 
+                   >Nedarvning</font></i> 
+          <td> 
+            <table align="center" border="0" cellPadding="5" cellSpacing="0">
+              <tr> 
+                <td><img src="oop_nedarvning.gif" width="438" height="332"></td>
+              </tr>
+            </table>
+      <tr> 
+          <td><b><font face ="" size="4">Super- og sub-klasser</font></b> 
+          <td> I figuren er nedarvning vist med en pil fra den klasse der &oslash;nsker 
+            at arve til den klasse der arves fra. Man kalder den klasse der arves 
+            fra: en <b>super-klasse</b>. I vores eksempel er klassen <b>A</b> en super-klasse. 
+            En klasse der arver fra en anden klasse kaldes en <b>sub-klasse</b>. I 
+            vores eksempel har vi to sub-klasser: <b>B</b> og <b>C</b>, der begge arver fra super-klassen 
+            <b>A</b>. 
+      <tr> 
+          <td> 
+          <td> Som man ser i figuren, tilf&oslash;jer vi nye egenskaber i de to sub-klasser. 
+            I sub-klassen <b>B</b> er disse illustreret med gult, og i subklasse <b>C</b> med r&oslash;dt. 
+            Disse egenskaber kan v&aelig;re s&aring;vel operationer som data. I instanserne 
+            ser man, at det bl&aring; stadig er der, men at der nu ogs&aring; er de 
+            nye egenskaber der supplerer de nedarvede. 
+      <tr> 
+          <td><b><font face ="" size="4">Variation</font></b> 
+          <td> Resultatet bliver, at vi har tre slags objekter, instanser af tre forskellige 
+            klasser. Klasser, der har en indbyrdes sammenh&aelig;ng, i kraft af nedarvningen. 
+            Dette er et eksempel p&aring; det man kalder variation. Vi har lavet variation 
+            vha. nedarvning, idet vi nu kan lave objekter der er lidt anderledes end 
+            dem vi ellers kunne lave. 
+        
+      <tr> 
+          <td> 
+          <td> Men hvad med Java - lad os f&aring; noget objektorienteret kode p&aring; 
+            banen! 
+      <tr> 
+          <td> 
+          <td> Det f&aring;r vi i n&aelig;ste kapitel. 
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><b><font face ="" size="6">Repetitionssp&oslash;rgsm&aring;l</font></b></p>
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">1</font></b> 
+          <td> Hvad er datakernen i et objekt. 
+        
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">2</font></b> 
+          <td> Hvad er indkapsling? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">3</font></b> 
+          <td> Hvad er operationernes rolle i et objekt? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">4</font></b> 
+          <td> Hvordan kan man bryde indkapsling? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">5</font></b> 
+          <td> Hvad er et objektsystem? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">6</font></b> 
+          <td> Hvad er associering? 
+        
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">7</font></b> 
+          <td> Hvordan forl&oslash;ber h&aring;ndteringen af en request? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">8</font></b> 
+          <td> Hvad er delegering? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">9</font></b> 
+          <td> Hvad er en klasse? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">10</font></b> 
+          <td> Hvad vil det sige, at instantiere? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">11</font></b> 
+          <td> Hvad er en instans? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">12</font></b> 
+          <td> Hvad er nedarvning? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">13</font></b> 
+          <td> Hvad er henholdsvis en super- og en sub-klasse? 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">14</font></b> 
+          <td> Hvad er variation? 
+      <tr> 
+          <td> 
+          <td> 
+            <p>&nbsp;</p>
+            <p><b><font face ="" size="6">Svar p&aring; repetitionssp&oslash;rgsm&aring;l</font></b></p>
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">1</font></b> 
+          <td> Datakernen indeholder objektets data. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">2</font></b> 
+          <td> Indkapsling er at datakernen ikke kan l&aelig;ses/&aelig;ndres udefra. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">3</font></b> 
+          <td> Operationerne g&oslash;r det muligt indirekte at arbejde med objektets 
+            data. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">4</font></b> 
+          <td> Man kan bryde indkapslingen ved at lave metoder til direkte at l&aelig;se/&aelig;ndre 
+            datakernens indhold. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">5</font></b> 
+          <td> Et objektsystem, er en gruppe af objekter der samarbejder. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">6</font></b> 
+          <td> Associering er n&aring;r et objekt  kender et andet objekt. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">7</font></b> 
+          <td> N&aring;r et objekt modtager en request &quot;g&oslash;r den et eller 
+            andet&quot;. Efter at have gjorte dette eller hint, returnerer den &quot;et 
+            eller andet&quot; til det objekt som sendte requesten. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">8</font></b> 
+          <td> Delegering er n&aring;r et objekt f&aring;r hj&aelig;lp af et andet 
+            objekt til at besvare en request. P&aring; den m&aring;de kommer et andet 
+            objekt til helt eller delvist at l&oslash;se den opgave der skal l&oslash;ses 
+            f&oslash;r der kan returneres. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">9</font></b> 
+          <td> En klasse er en skabelon, der beskriver hvordan et objekt skal opbygges. 
+            Man kan derfor lave objekter ud fra en klasse. 
+        
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">10</font></b> 
+          <td> At instantiere, er at lave objekter ud fra en klasse. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">11</font></b> 
+          <td> En instans er et objekt der er lavet ud fra en klasse. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">12</font></b> 
+          <td> Nedarvning er n&aring;r man med udgangspunkt i en klasse laver en anden 
+            klasse. Instanser af den klasse der nedarves til, vil have de samme egenskaber 
+            som instanser af den klasse der arves fra, <i>men</i> man vil have suppleret 
+            med <i>yderligere</i> egenskaber. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">13</font></b> 
+          <td> En super-klasse er en klasse der nedarves <i>fra</i>, mens en sub-klasse 
+            er en klasse der nedarves <i>til</i>. 
+      <tr> 
+          <td align="right" valign="top"><b><font face ="" size="4">14</font></b> 
+          <td> Variation er n&aring;r man laver noget der er lidt anderledes end det 
+            man allerede har. F.eks. kan man lave variation vha. nedarvning.</td>
+      </tr>
+    </table>
+    
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </body>
+</html>
